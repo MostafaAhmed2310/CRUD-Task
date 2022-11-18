@@ -1,0 +1,23 @@
+<div class="list-items-container">
+  <h1 class="head-title"> Items List </h1>
+  <span class="add-item-btn">
+    <%= link_to "Add a New Item", new_item_path %>
+  </span>
+  <table>
+    <tr class="table-head">
+      <td><span>Name</span></td>
+      <td><span>Number</span></td>
+      <td><span>Description</span></td>
+      <td><span>Actions</span></td>
+    </tr>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><span><%= item.num %></span></td>
+        <td><span><%= item.desc %></span></td>
+        <td><%= button_to 'Edit', edit_item_path(item), method: 'get'%></td>
+        <td><%= button_to 'Remove', item_path(item), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,10 @@
+<h1>Edit Item</h1>
+<h3>Update item Details</h3>
+<%= form_with model: @item do |form| %>
+  <div class="form-container">
+    <%= form.text_field :name, placeholder: "Item name", :required => true %>
+    <%= form.text_field :num, placeholder: "Item number", :required => true %>
+    <%= form.text_field :desc, placeholder: "Item description", :required => true %>
+    <%= form.submit class: "add-item-btn" %>
+  </div>
+<% end %>
